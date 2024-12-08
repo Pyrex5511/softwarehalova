@@ -33,6 +33,9 @@ class UdalostResource extends Resource
                 TextInput::make('miesto')
                     ->default('Halova')
                     ->required(),
+                TextInput::make('organizator')
+                    ->default('Skola Halova')
+                    ->required(),
             ]);
     }
 
@@ -51,6 +54,9 @@ class UdalostResource extends Resource
                     ->sortable(),
                 TextColumn::make('miesto')
                     ->searchable(),
+                TextColumn::make('organizator')
+                    ->searchable()
+
             ])
             ->filters([])
             ->actions([
