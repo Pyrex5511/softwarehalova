@@ -7,11 +7,18 @@ use Illuminate\Http\Request;
 
 class UdalostController extends Controller
 {
-    public function index(Request $request){
+    public function index(Request $request)
+    {
+        $query = Udalost::query();
 
-        $udalosti = Udalost::all();
+        if ($search = $request->input('search')) {
+            $query->where('nazov', 'like', "%{$search}%")
+                ->orWhere('miesto', 'like', "%{$search}%");
+        }
+
+
+        $udalosti = $query->paginate($request->input('per_page', 10));
 
         return response()->json($udalosti);
-
     }
 }
