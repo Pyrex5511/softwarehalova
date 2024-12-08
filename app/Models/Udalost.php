@@ -13,6 +13,7 @@ class Udalost extends Model
         'datum_uskutocnenia',
         'popis',
         'miesto',
+        'organizator'
     ];
 
 }

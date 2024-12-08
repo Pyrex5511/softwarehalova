@@ -21,6 +21,7 @@ class UdalostFactory extends Factory
             'popis' => $this->faker->paragraph,
             'datum_uskutocnenia' => $this->faker->date(),
             'miesto' => $this->faker->city,
+            'organizator' => $this->faker->company,
         ];
     }
 }

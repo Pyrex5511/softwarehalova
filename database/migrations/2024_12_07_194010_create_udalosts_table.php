@@ -18,6 +18,7 @@ return new class extends Migration
             $table->text('popis');
             $table->date('datum_uskutocnenia');
             $table->string('miesto');
+            $table->string('organizator')->default('Skola Halova');
             $table->timestamps();
         });
     }

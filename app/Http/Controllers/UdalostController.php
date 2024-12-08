@@ -13,7 +13,8 @@ class UdalostController extends Controller
 
         if ($search = $request->input('search')) {
             $query->where('nazov', 'like', "%{$search}%")
-                ->orWhere('miesto', 'like', "%{$search}%");
+                ->orWhere('miesto', 'like', "%{$search}%")
+                ->orWhere('organizator', 'like', "%{$search}%");
         }
 
 
